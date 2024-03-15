@@ -1,10 +1,5 @@
 function solution(s) {
-    var answer = '';
-    arr=[];
-    arr=s.split(" ");
-    arr.sort(function(a,b){
-        return a-b;
-    });
-    answer=arr[0]+" "+arr[arr.length-1];
-    return answer;
+    let arr = s.split(" ").sort((a,b)=>a-b);
+    
+    return arr[0]+" "+arr[arr.length-1];
 }
