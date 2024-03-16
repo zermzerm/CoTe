@@ -21,6 +21,7 @@ function solution(s) {
       tmp += arr[i];
     }
     if (object[tmp] !== undefined) {
+      console.log(object[tmp]);
       answer += object[tmp];
       tmp = "";
     }
