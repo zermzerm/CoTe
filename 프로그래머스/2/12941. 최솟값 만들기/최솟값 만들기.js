@@ -1,9 +1,9 @@
-function solution(A,B){
-    var arrA=[],arrB=[],answer=0;
-    arrA=A.sort((a,b)=>a-b);
-    arrB=B.sort((a,b)=>b-a);
-    for(i in arrA){
-        answer+=arrA[i]*arrB[i];
-    }
-    return answer;
+function solution(A, B) {
+  let answer = 0;
+  A.sort((a, b) => a - b);
+  B.sort((a, b) => b - a);
+  for (let i = 0; i < A.length; i++) {
+    answer += A[i] * B[i];
+  }
+  return answer;
 }
