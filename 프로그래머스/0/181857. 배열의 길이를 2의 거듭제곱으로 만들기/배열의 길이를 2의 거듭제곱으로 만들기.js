@@ -6,7 +6,7 @@ const solution = (arr) => {
     n *= 2;
     cnt++;
   }
-  for (let i = 0; i < Math.abs(arr.length - 2 ** cnt); i++) {
+  for (let i = 0; i < 2 ** cnt - arr.length; i++) {
     answer.push(0);
   }
   return answer;
