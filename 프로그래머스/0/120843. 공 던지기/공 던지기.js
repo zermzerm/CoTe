@@ -5,7 +5,7 @@ const solution = (numbers, k) => {
     cnt++;
     if (index === numbers.length - 2) index = 0;
     else if (index > numbers.length - 2) index = 1;
-    else if (index < numbers.length - 2) index += 2;
+    else index += 2;
   }
   return numbers[index];
 };
