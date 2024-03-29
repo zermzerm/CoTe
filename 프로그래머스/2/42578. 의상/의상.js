@@ -6,7 +6,5 @@ function solution(clothes) {
       : obj.set(clothes[i][1], 1);
   }
   let arr = [...obj];
-  console.log(arr);
-  if (arr.length === 1) return clothes.length;
   return arr.reduce((acc, cur) => acc * (cur[1] + 1), 1) - 1;
 }
