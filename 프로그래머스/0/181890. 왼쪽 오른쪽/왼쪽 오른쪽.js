@@ -1,7 +1,7 @@
 function solution(str_list) {
   let larr = [],
     rarr = [];
-      if (str_list.indexOf("l") < 0 && str_list.indexOf("r") < 0) {
+  if (str_list.indexOf("l") < 0 && str_list.indexOf("r") < 0) {
     return [];
   }
   for (let i = 0; i < str_list.length; i++) {
