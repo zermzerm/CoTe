@@ -1,26 +1,30 @@
+const compare = (k, plus, board, answer) => {
+  if (plus) {
+    answer[k]++;
+    if (answer[k] > Math.floor(board[k] / 2))
+      answer[k] = Math.floor(board[k] / 2);
+  } else {
+    answer[k]--;
+    if (answer[k] < -Math.floor(board[k] / 2))
+      answer[k] = -Math.floor(board[k] / 2);
+  }
+};
+
 const solution = (keyinput, board) => {
   const answer = [0, 0];
   keyinput.forEach((el) => {
     switch (el) {
       case 'left':
-        answer[0]--;
-        if (answer[0] < -Math.floor(board[0] / 2))
-          answer[0] = -Math.floor(board[0] / 2);
+        compare(0, false, board, answer);
         break;
       case 'right':
-        answer[0]++;
-        if (answer[0] > Math.floor(board[0] / 2))
-          answer[0] = Math.floor(board[0] / 2);
+        compare(0, true, board, answer);
         break;
       case 'up':
-        answer[1]++;
-        if (answer[1] > Math.floor(board[1] / 2))
-          answer[1] = Math.floor(board[1] / 2);
+        compare(1, true, board, answer);
         break;
       case 'down':
-        answer[1]--;
-        if (answer[1] < -Math.floor(board[1] / 2))
-          answer[1] = -Math.floor(board[1] / 2);
+        compare(1, false, board, answer);
         break;
     }
   });
