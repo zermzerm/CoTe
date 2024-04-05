@@ -1,12 +1,8 @@
 const compare = (k, plus, board, answer) => {
   if (plus) {
-    answer[k]++;
-    if (answer[k] > Math.floor(board[k] / 2))
-      answer[k] = Math.floor(board[k] / 2);
+    if (answer[k] <= Math.floor(board[k] / 2) - 1) answer[k]++;
   } else {
-    answer[k]--;
-    if (answer[k] < -Math.floor(board[k] / 2))
-      answer[k] = -Math.floor(board[k] / 2);
+    if (answer[k] >= -(Math.floor(board[k] / 2) - 1)) answer[k]--;
   }
 };
 
