@@ -1,5 +1,3 @@
 function solution(n) {
-    var arr=String(n).split("");
-    arr.sort((a,b)=>b-a);
-    return +arr.join("");
+    return +[...String(n)].sort((a,b)=>b-a).join("")
 }
