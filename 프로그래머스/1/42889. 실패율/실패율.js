@@ -8,12 +8,7 @@ function solution(N, stages) {
       if (i <= stages[j]) overCnt++;
       if (i === stages[j]) stageCnt++;
     }
-    arr.push(overCnt === 0 ? 0 : stageCnt / overCnt);
+    arr.push(overCnt === 0 ? [i, 0] : [i, stageCnt / overCnt]);
   }
-  const sortedArr = [...arr].sort((a, b) => b - a);
-  for (let i = 0; i < sortedArr.length; i++) {
-    answer.push(arr.indexOf(sortedArr[i]) + 1);
-    arr.splice(arr.indexOf(sortedArr[i]), 1, -1);
-  }
-  return answer;
+  return arr.sort((a, b) => b[1] - a[1]).map((el) => el[0]);
 }
