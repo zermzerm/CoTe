@@ -1,9 +1,7 @@
 function solution(n) {
-    var answer = [];
+    var answer = Array.from(Array(n),()=>(Array(n).fill(0)));
     for(let i=0;i<n;i++){
-        let tmpArr = Array(n).fill(0)
-        tmpArr[i]=1;
-        answer.push(tmpArr)
+        answer[i][i]=1;
     }
     return answer;
 }
