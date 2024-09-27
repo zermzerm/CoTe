@@ -6,7 +6,6 @@ function solution(want, number, discount) {
             allItem.push(want[i])
         }
     }
-    // console.log(allItem)
     for(let i=0;i<discount.length;i++){
         let tmpItem = [...allItem];
         for(let j=i;j<i+10;j++){
