@@ -1,11 +1,7 @@
 function solution(n, k) {
     let answer =0;
     const alterN = n.toString(k).split("0").filter((el)=>el!=='1'&&el!=='').map((el)=>+el)
-    // console.log(alterN)
-    for(let i=0;i<alterN.length;i++){
-        if(primeCheck(alterN[i])) answer++;
-    }
-    return answer;
+    return alterN.filter((el)=>primeCheck(el)).length;
 }
 
 function primeCheck(n){
