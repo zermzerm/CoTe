@@ -3,8 +3,9 @@ function solution(priorities, location) {
     const answerIdx = arr[location];
     let cnt =1;
     while(priorities.length>0){
-        if(priorities[0]!==Math.max(...priorities)){
-            let tmp = priorities.shift();
+        let tmp = priorities.shift();
+        let hasMax = priorities.some((el)=>el>tmp);
+        if(hasMax){
             priorities.push(tmp);
             tmp = arr.shift();
             arr.push(tmp);
@@ -13,7 +14,6 @@ function solution(priorities, location) {
             if(arr[0][1]===location) return cnt;
             else{
                 arr.splice(0,1);
-                priorities.splice(0,1);
                 cnt++;
             }
         }
