@@ -4,11 +4,9 @@ function solution(priorities, location) {
     let cnt =1;
     while(priorities.length>0){
         if(priorities[0]!==Math.max(...priorities)){
-            let tmp = priorities[0];
-            priorities.shift();
+            let tmp = priorities.shift();
             priorities.push(tmp);
-            tmp = arr[0];
-            arr.shift();
+            tmp = arr.shift();
             arr.push(tmp);
         }
         else{
