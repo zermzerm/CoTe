@@ -1,7 +1,6 @@
 function solution(a, b, c, d) {
     let value = [a,b,c,d].sort();
     let arr = [...new Set(value)];
-    console.log(arr)
     switch(arr.length){
         case 1:
             return 1111*arr[0];
@@ -21,12 +20,3 @@ function solution(a, b, c, d) {
             return Math.min(...arr);
     }
 }
-
-//4개p 같 => 1111*p
-
-//3개p, 1개q => (10*p + q)**2 -> 주의
-//2개p, 2개q => (p+q)*|p-q|
-
-//2개p, 1개q, 1개r => q*r -> 주의
-
-//1개p, 1개q, 1개r, 1개s => 가장큰 값
