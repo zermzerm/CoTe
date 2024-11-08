@@ -7,7 +7,6 @@ function calcMin(a,b){
 
 function solution(fees, records) {
     const splitRecords = records.map((el)=>el.split(" ")).sort((a,b)=>a[1]-b[1]);
-    // console.log(splitRecords)
     const stack = [];
     const answer = [];
     let sum = 0;
@@ -36,6 +35,5 @@ function solution(fees, records) {
         sum += calcMin(stack.pop(),"23:59");
         answer.push(calcMoney(sum));
     }
-    // console.log(answer)
     return answer
 }
