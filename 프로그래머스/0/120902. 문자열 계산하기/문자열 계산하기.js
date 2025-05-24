@@ -6,4 +6,20 @@ function solution(my_string) {
     i++;
   }
   return tmp;
+    
+//     let calc = my_string.split("").filter((el)=>el!==' ')
+
+//     let tmp=calc[0]
+//     let sign = 1;
+//     for(let i=1;i<calc.length;i++){
+//         if(!isNaN(+calc[i])){
+//             tmp+=calc[i]
+//         }
+//         else if(calc[i]==='+'){
+//             sign = 1;
+//         }
+//         else{
+//             sign = 0;
+//         }
+//     }
 }
