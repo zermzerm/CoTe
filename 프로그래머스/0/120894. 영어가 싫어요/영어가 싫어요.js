@@ -12,14 +12,25 @@ const eng = {
 };
 
 const solution = (numbers) => {
-  let answer = "";
-  let letter = "";
-  for (let i = 0; i < numbers.length; i++) {
-    letter += numbers[i];
-    if (eng[letter]) {
-      answer += eng[letter];
-      letter = "";
+  // let answer = "";
+  // let letter = "";
+  // for (let i = 0; i < numbers.length; i++) {
+  //   letter += numbers[i];
+  //   if (eng[letter]) {
+  //     answer += eng[letter];
+  //     letter = "";
+  //   }
+  // }
+  // return +answer;
+    
+    let tmp ='';
+    let answer = '';
+    for(let i=0;i<numbers.length;i++){
+        tmp+=numbers[i]
+        if(eng[tmp]){
+            answer+=eng[tmp];
+            tmp='';
+        }
     }
-  }
-  return +answer;
+    return +answer
 };
