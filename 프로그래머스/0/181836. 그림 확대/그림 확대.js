@@ -10,15 +10,22 @@ function solution(picture, k) {
 //   }
 //   return answer;
     
+//     let answer = [];
+//     for(let i=0;i<picture.length;i++){
+//         let tmp = '';
+//         for(let j=0;j<picture[i].length;j++){
+//             tmp += picture[i][j].repeat(k);
+//         }
+//         for(let j=0;j<k;j++){
+//           answer.push(tmp);  
+//         }
+//     }
+//     return answer;
     let answer = [];
-    for(let i=0;i<picture.length;i++){
-        let tmp = '';
-        for(let j=0;j<picture[i].length;j++){
-            tmp += picture[i][j].repeat(k);
-        }
-        for(let j=0;j<k;j++){
-          answer.push(tmp);  
-        }
-    }
+    picture.map((el)=>{
+        let tmp =[...el].map((v)=>v.repeat(k)).join("");
+        for(let i=0;i<k;i++) answer.push(tmp)
+    });
     return answer;
+    console.log(tmp)
 }
