@@ -1,12 +1,18 @@
 // const obj = {'zero':0,'one':1,'two':2,'three':3,'four':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9,}
 const obj = ['zero','one','two','three','four','five','six','seven','eight','nine'];
 function solution(s){
-    let answer = s
+    // let answer = s
+    // for(let i=0;i<obj.length;i++){
+    //     let tmp = answer.split(obj[i]);
+    //     answer = tmp.join(i);
+    // }
+    // return +answer;
+    
     for(let i=0;i<obj.length;i++){
-        let tmp = answer.split(obj[i]);
-        answer = tmp.join(i);
+        s = s.split(obj[i]).join(i);
     }
-    return +answer
+    return +s
+    
     // let tmp = '';
     // let answer = '';
     // for(let i=0;i<s.length;i++){
