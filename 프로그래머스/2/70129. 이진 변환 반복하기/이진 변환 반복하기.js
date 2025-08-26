@@ -13,7 +13,8 @@ function solution(s) {
     let cnt = [0,0];
     while(s!=="1"){
         if(s.includes("0")) cnt[1]+=s.match(/0/g).length;
-        s = s.split("0").join("")
+        // s = s.split("0").join("")
+        s = s.replace(/0/g,"");
         // while(s.includes("0")){
         //     s = s.replace("0","");
         //     cnt[1]++;
