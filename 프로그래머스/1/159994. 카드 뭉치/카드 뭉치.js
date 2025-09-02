@@ -1,7 +1,9 @@
 function solution(cards1, cards2, goal) {
+    let j=0;
+    let k=0;
     for(let i=0;i<goal.length;i++){
-        if(cards1.indexOf(goal[i])===0) cards1.splice(0,1);
-        else if(cards2.indexOf(goal[i])===0) cards2.splice(0,1);
+        if(cards1[j]===goal[i]) j++;
+        else if(cards2[k]===goal[i]) k++;
         else return "No"
     }
     return "Yes"
