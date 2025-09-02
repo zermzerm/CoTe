@@ -8,6 +8,7 @@ function solution(n) {
   //     n = n / 2;
   //   }
   // }
+    
   // return cnt;
     // let cnt=0;
     // while(n!==0){
@@ -18,5 +19,13 @@ function solution(n) {
     //     }
     // }
     // return cnt;
-    return     (n.toString(2).match(/1/g).length);
+    
+    // return     (n.toString(2).match(/1/g).length);
+    
+    let cnt=0;
+    while(n!==0){
+        cnt += n%2;
+        n = Math.floor(n/2);
+    }
+    return cnt;
 }
