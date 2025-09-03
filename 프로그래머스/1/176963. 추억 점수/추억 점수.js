@@ -23,5 +23,5 @@ function solution(name, yearning, photo) {
     // }
     // return answer
     
-    return photo.map((el)=>el.reduce((acc,cur,idx)=>name.indexOf(cur)!==-1 ? acc+yearning[name.indexOf(cur)] : acc+0,0))
+    return photo.map((el)=>el.reduce((acc,cur,idx)=> acc+(yearning[name.indexOf(cur)] ?? 0) ,0))
 }
