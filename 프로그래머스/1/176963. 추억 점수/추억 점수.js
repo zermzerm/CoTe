@@ -12,14 +12,16 @@ function solution(name, yearning, photo) {
   // return result;
     
     
-    let answer = [];
-    for(let i=0;i<photo.length;i++){
-        let sum = 0;
-        for(let j=0;j<photo[i].length;j++){
-            let idx = name.indexOf(photo[i][j]);
-            if(idx!==-1) sum+=yearning[idx]
-        }
-        answer.push(sum)
-    }
-    return answer
+    // let answer = [];
+    // for(let i=0;i<photo.length;i++){
+    //     let sum = 0;
+    //     for(let j=0;j<photo[i].length;j++){
+    //         let idx = name.indexOf(photo[i][j]);
+    //         if(idx!==-1) sum+=yearning[idx]
+    //     }
+    //     answer.push(sum)
+    // }
+    // return answer
+    
+    return photo.map((el)=>el.reduce((acc,cur,idx)=>name.indexOf(cur)!==-1 ? acc+yearning[name.indexOf(cur)] : acc+0,0))
 }
