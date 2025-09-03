@@ -1,12 +1,25 @@
-function solution(name, yearning, photo){
-    var answer=[];
-    for(i=0;i<photo.length;i++){
-        var point=0;
-        for(j=0;j<name.length;j++){
-            var arr=photo[i];
-            point+=arr.filter(v=>name[j]===v).length*yearning[j];
+function solution(name, yearning, photo) {
+  // const result = [];
+  // for (let i = 0; i < photo.length; i++) {
+  //   let sum = 0;
+  //   for (let j = 0; j < photo[i].length; j++) {
+  //     if (name.includes(photo[i][j])) {
+  //       sum += yearning[name.indexOf(photo[i][j])];
+  //     }
+  //   }
+  //   result.push(sum);
+  // }
+  // return result;
+    
+    
+    let answer = [];
+    for(let i=0;i<photo.length;i++){
+        let sum = 0;
+        for(let j=0;j<photo[i].length;j++){
+            let idx = name.indexOf(photo[i][j]);
+            if(idx!==-1) sum+=yearning[idx]
         }
-        answer.push(point);
+        answer.push(sum)
     }
-    return answer;
+    return answer
 }
