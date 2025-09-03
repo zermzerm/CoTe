@@ -8,8 +8,8 @@ function solution(n, A, B) {
   //   cnt++;
   // }
   // return cnt;
-    let cnt = 1;
-    while(Math.ceil(A/2)!==Math.ceil(B/2)){
+    let cnt = 0;
+    while(A!==B){
         A = Math.ceil(A/2);
         B = Math.ceil(B/2);
         cnt++;
