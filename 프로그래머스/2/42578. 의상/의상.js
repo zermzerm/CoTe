@@ -15,8 +15,6 @@ function solution(clothes) {
 //   return count - 1;
     
     const obj = {};
-    for(let i=0;i<clothes.length;i++){
-        obj[clothes[i][1]] ? obj[clothes[i][1]]++ : obj[clothes[i][1]] = 1;
-    }
-    return Object.entries(obj).reduce((acc,cur)=>acc*(cur[1]+1),1)-1;
+    for(let i=0;i<clothes.length;i++) obj[clothes[i][1]] ? obj[clothes[i][1]]++ : obj[clothes[i][1]] = 1 
+    return Object.values(obj).reduce((acc,cur)=>acc*(cur+1),1)-1;
 }
