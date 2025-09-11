@@ -7,7 +7,6 @@ function solution(a, b) {
   //   mon += MONTH[i];
   // }
   // return mon % 7 === 0 ? DAY.at(-1) : DAY[(mon % 7) - 1];
-    let day = (MONTH.reduce((acc,cur,idx)=>idx<a-1 ? acc+cur : acc,0)+b)%7
-    return DAY[day ? day-1 : 6];
+    return DAY.at((MONTH.reduce((acc,cur,idx)=>idx<a-1 ? acc+cur : acc,0)+b)%7-1)
     
 }
