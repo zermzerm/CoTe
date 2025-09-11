@@ -1,10 +1,22 @@
 function solution(clothes) {
-  let obj = new Map();
-  for (let i = 0; i < clothes.length; i++) {
-    obj.has(clothes[i][1])
-      ? obj.set(clothes[i][1], obj.get(clothes[i][1]) + 1)
-      : obj.set(clothes[i][1], 1);
-  }
-  let arr = [...obj];
-  return arr.reduce((acc, cur) => acc * (cur[1] + 1), 1) - 1;
+//   let count = 1;
+//   const result = new Map();
+
+//   clothes.map((val) =>
+//     result.has(val[1])
+//       ? result.set(val[1], result.get(val[1]) + 1)
+//       : result.set(val[1], 1)
+//   );
+
+//   for (let [key, val] of result) {
+//     count *= val + 1;
+//   }
+
+//   return count - 1;
+    
+    const obj = {};
+    for(let i=0;i<clothes.length;i++){
+        obj[clothes[i][1]] ? obj[clothes[i][1]]++ : obj[clothes[i][1]] = 1;
+    }
+    return Object.entries(obj).reduce((acc,cur)=>acc*(cur[1]+1),1)-1;
 }
