@@ -1,4 +1,9 @@
 function solution(num, total) {
+    //가우스 이용 풀이로 다음에 해보기
+    //x + (x+1) + (x+2) + ... + (x + (num-1)) = total
+    //num * x + (0 + 1 + 2 + ... + (num-1)) = total
+    //num * x + (num-1)*num/2 = total
+    //x(시작지점) =  (total - (num-1)*num/2) / num
     let sumArr = [];
     let current = total+Math.floor(num/2);
     let sum = 0;
