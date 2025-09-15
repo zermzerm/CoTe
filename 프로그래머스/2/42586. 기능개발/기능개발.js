@@ -24,8 +24,6 @@ function solution(progresses, speeds) {
         if(speedArr[i]<=cntArr[i-1]) cntArr.push(cntArr[i-1])
         else cntArr.push(speedArr[i])
     }
-    console.log(speedArr);
-    console.log(cntArr)
     let answer = [];
     let cnt =1;
     for(let i=1;i<cntArr.length;i++){
