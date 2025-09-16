@@ -26,9 +26,10 @@ function solution(cacheSize, cities) {
     let time = 0;
     const city = cities.map((el)=>el.toLowerCase());
     for(let i=0;i<city.length;i++){
-        if(cacheArr.includes(city[i])){
+        let idx = cacheArr.indexOf(city[i])
+        if(idx!==-1){
             time+=1;
-            cacheArr.splice(cacheArr.indexOf(city[i]),1);
+            cacheArr.splice(idx,1);
             cacheArr.push(city[i]);
         }
         else{
