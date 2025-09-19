@@ -1,4 +1,4 @@
-function solution(maps) {
+function solution(maps) {    
   // 총 행렬
   let rows = maps.length;
   let cols = maps[0].length;
@@ -31,7 +31,7 @@ function solution(maps) {
         newRow < rows &&
         newCol >= 0 &&
         newCol < cols &&
-        maps[newRow][newCol] === 1 && !visited[newRow][newCol]
+        maps[newRow][newCol] ===1 && !visited[newRow][newCol]
       ) {
         visited[newRow][newCol] = true;
         queue.push([newRow, newCol, dist + 1]);
