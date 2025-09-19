@@ -1,13 +1,8 @@
 function solution(k, m, score) {
     score.sort((a,b)=>b-a);
-    let tmp = [];
     let sum = 0;
-    for(let i=0;i<score.length;i++){
-        if(tmp.length<m) tmp.push(score[i])
-        if(tmp.length===m){
-            sum+=Math.min(...tmp)*m;
-            tmp=[];       
-            }
+    for(let i=m-1;i<score.length;i+=m){
+        sum+=score[i]*m; 
     }
     return sum;
     
