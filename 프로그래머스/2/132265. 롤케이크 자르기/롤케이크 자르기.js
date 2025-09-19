@@ -1,35 +1,50 @@
 function solution(topping){
-    let cakeA = {};
-    let cakeB = new Set();
-    let type = 0;
-    let answer =0;
+    let first = new Map();
+    let second = new Map();
+    let cnt =0;
     for(let i=0;i<topping.length;i++){
-        if(cakeA[topping[i]]){
-            cakeA[topping[i]]++;
-        }
-        else{
-            cakeA[topping[i]] = 1;
-            type++;
-        }
+        first.set(topping[i], first.get(topping[i]) ? first.get(topping[i]) + 1 : 1)
     }
     for(let i=0;i<topping.length;i++){
-        cakeB.add(topping[i]);
-        cakeA[topping[i]]--;
-        if(!cakeA[topping[i]]) type--;
-        if(cakeB.size===type) answer++;
+        second.set(topping[i], second.get(topping[i]) ? second.get(topping[i])+1 : 1)
+        if(first.get(topping[i])>1) first.set(topping[i], first.get(topping[i])-1);
+        else if(first.get(topping[i])===1) first.delete(topping[i]);
+        if(first.size===second.size) cnt++;
     }
-    return answer;
+    return cnt
+    //시간 초과
+    // let cnt =0;
+    // for(let i=1; i<topping.length;i++){
+    //     let first = new Set (topping.slice(0,i));
+    //     let second = new Set(topping.slice(i));
+    //     if(first.size===second.size) cnt++;
+    // }
+    // return cnt
+    
+    //Set으로 정답
+    // let cakeA = {};
+    // let cakeB = new Set();
+    // let type = 0;
+    // let answer =0;
+    // for(let i=0;i<topping.length;i++){
+    //     if(cakeA[topping[i]]){
+    //         cakeA[topping[i]]++;
+    //     }
+    //     else{
+    //         cakeA[topping[i]] = 1;
+    //         type++;
+    //     }
+    // }
+    // for(let i=0;i<topping.length;i++){
+    //     cakeB.add(topping[i]);
+    //     cakeA[topping[i]]--;
+    //     if(!cakeA[topping[i]]) type--;
+    //     if(cakeB.size===type) answer++;
+    // }
+    // return answer;
 }
 
-// function solution(topping) {
-//     let cnt =0;
-//     for(let i=0;i<topping.length;i++){
-//         let arr1=new Set(topping.slice(0,i+1)),arr2=new Set(topping.slice(i+1));
-//         if(arr1.size ===arr2.size) cnt++;
-//     }
-//     return cnt;
-// }
-
+//시간 초과
 // function solution(topping){
 //     let cnt=0;
 //     for(let i=0;i<topping.length;i++){
