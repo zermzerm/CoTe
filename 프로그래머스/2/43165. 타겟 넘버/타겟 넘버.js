@@ -1,17 +1,29 @@
 function solution(numbers, target){
-    let answer = 0;
-    function dfs(index,sum){
-        if(index===numbers.length){
-            if(sum===target){
-                answer ++;
-            }
-            return;
+    let cnt = 0;
+    
+    function dfs(i,sum){
+        if(i===numbers.length){
+            if(sum===target) cnt++
+            return;            
         }
-        dfs(index+1,sum+numbers[index]);
-        dfs(index+1,sum-numbers[index]);
+        dfs(i+1,sum+numbers[i]);
+        dfs(i+1,sum-numbers[i]);
     }
-    dfs(0,0);
-    return answer;
+    dfs(0,0)
+    return cnt;
+    // let answer = 0;
+    // function dfs(index,sum){
+    //     if(index===numbers.length){
+    //         if(sum===target){
+    //             answer ++;
+    //         }
+    //         return;
+    //     }
+    //     dfs(index+1,sum+numbers[index]);
+    //     dfs(index+1,sum-numbers[index]);
+    // }
+    // dfs(0,0);
+    // return answer;
 }
 
 // function generateBinarySequences(length) {
