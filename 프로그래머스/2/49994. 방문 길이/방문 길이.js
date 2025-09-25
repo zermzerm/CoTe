@@ -1,15 +1,8 @@
 function solution(dirs) {
-    let cnt = 0;
     let cur = [0,0]
     const way = new Set();
-    // const way = [];
-    let dirsArr = dirs.split("");
-    // const tmp =  JSON.stringify([ [ -1, 0 ], [ 0, 0 ] ].flat())
-    // way.add(tmp);
-    // way.add(tmp)
-    // console.log(way)
-    for(let i=0;i<dirsArr.length;i++){
-        switch(dirsArr[i]){
+    for(let i=0;i<dirs.length;i++){
+        switch(dirs[i]){
             case "U" :
                 if(cur[1]<5){
                     way.add(JSON.stringify([cur,[cur[0],cur[1]+1]].sort().flat()));
