@@ -3,25 +3,48 @@ function solution(nums) {
     
     function isPrime(num){
         for(let i=2;i<=num**0.5;i++){
-            if(num%i===0) return false
+            if(num%i===0) return false;
         }
         return true;
     }
     
     function combination(arr,idx){
         if(arr.length===3){
-            let sum = arr.reduce((acc,cur)=>acc+cur,0);
-            if(isPrime(sum)) cnt++;
+            if(isPrime(arr.reduce((acc,cur)=>acc+cur,0))) cnt++;
             return;
         }
         for(let i=idx;i<nums.length;i++){
-            arr.push(nums[i])
+            arr.push(nums[i]);
             combination(arr,i+1);
             arr.pop();
         }
     }
-    combination([],0);
+    combination([],0)
     return cnt;
+    
+//     let cnt = 0;
+    
+//     function isPrime(num){
+//         for(let i=2;i<=num**0.5;i++){
+//             if(num%i===0) return false
+//         }
+//         return true;
+//     }
+    
+//     function combination(arr,idx){
+//         if(arr.length===3){
+//             let sum = arr.reduce((acc,cur)=>acc+cur,0);
+//             if(isPrime(sum)) cnt++;
+//             return;
+//         }
+//         for(let i=idx;i<nums.length;i++){
+//             arr.push(nums[i])
+//             combination(arr,i+1);
+//             arr.pop();
+//         }
+//     }
+//     combination([],0);
+//     return cnt;
 //     let count = 0;
 
 //     function isPrime(num) {
