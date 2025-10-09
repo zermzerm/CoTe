@@ -1,10 +1,10 @@
-// function solution(triangle) {
-//     for(let i=triangle.length-2;i>=0;i--){
-//         for(let j=0;j<triangle[i].length;j++){
-//             triangle[i][j]+=Math.max(triangle[i+1][j],triangle[i+1][j+1]);
-//         }
-//     }
-//     return triangle[0][0]
+function solution(triangle) {
+    for(let i=triangle.length-2;i>=0;i--){
+        for(let j=0;j<triangle[i].length;j++){
+            triangle[i][j]+=Math.max(triangle[i+1][j],triangle[i+1][j+1]);
+        }
+    }
+    return triangle[0][0]
     
     
     // let answer =[];
@@ -19,7 +19,7 @@
     // }
     // dp(0,0,0);
     // return Math.max(...answer)
-// }
+}
     
     // function solution(triangle) {
     // return Math.max(...triangle.reduce((dp, raw) => {
@@ -29,15 +29,15 @@
     //     }, [0]));
 // }
 
-function solution(triangle) {
-    for(let i=triangle.length-2;i>=0;i--){
-        for(let j=0;j<triangle[i].length;j++){
-            triangle[i][j] += Math.max(triangle[i+1][j],triangle[i+1][j+1])
-        }
-    }
+// function solution(triangle) {
+//     for(let i=triangle.length-2;i>=0;i--){
+//         for(let j=0;j<triangle[i].length;j++){
+//             triangle[i][j] += Math.max(triangle[i+1][j],triangle[i+1][j+1])
+//         }
+//     }
     
-    return triangle[0][0]
-}
+//     return triangle[0][0]
+// }
 
 // function solution(triangle) {
 //     const answer =[];
