@@ -2,26 +2,17 @@ function solution(str1, str2) {
     str1 = str1.toUpperCase();
     str2 = str2.toUpperCase();
     let cnt = 0;
-    let tmp ="";
-    let arr1 = [], arr2=[];
-    for(let i=0;i<str1.length-1;i++){
-        if(str1[i].match(/[A-Za-z]/)&&str1[i+1].match(/[A-Za-z]/)){
-            tmp+=str1[i]+str1[i+1]
+    function compare(str){
+        let arr = [];
+        for(let i=0;i<str.length-1;i++){
+            if(str[i].match(/[A-Za-z]/)&&str[i+1].match(/[A-Za-z]/)){
+                arr.push(str[i]+str[i+1]);
+            }
         }
-        if(tmp.length===2){
-            arr1.push(tmp);
-            tmp="";
-        }
+        return arr;
     }
-        for(let i=0;i<str2.length-1;i++){
-        if(str2[i].match(/[A-Za-z]/)&&str2[i+1].match(/[A-Za-z]/)){
-            tmp+=str2[i]+str2[i+1]
-        }
-        if(tmp.length===2){
-            arr2.push(tmp);
-            tmp="";
-        }
-    }
+    let arr1 = compare(str1);
+    let arr2 = compare(str2);
     for(let i=0;i<arr1.length;i++){
         if(arr2.includes(arr1[i])){
             arr2.splice(arr2.indexOf(arr1[i]),1);
