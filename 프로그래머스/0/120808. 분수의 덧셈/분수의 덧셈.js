@@ -2,14 +2,10 @@ function solution(numer1, denom1, numer2, denom2) {
     function GCD(num1,num2){
         return num1%num2 ? GCD(num2,num1%num2) : num2;
     }
-    let mo = denom1*denom2/GCD(denom1,denom2);
-    let za = mo/denom1*numer1+mo/denom2*numer2;
-    while(GCD(za,mo)!==1){
-        let gcd = GCD(za,mo);
-        mo = mo/gcd;
-        za = za/gcd;
-    }
-    return [za,mo];
+    let mo = denom1*denom2;
+    let za = numer1*denom2+numer2*denom1;
+    return [za/GCD(za,mo),mo/GCD(za,mo)];
+    
     // var za=0,mo=0;
     // var za_arr=[],mo_arr=[],re_arr=[];
     // za=numer1*denom2+numer2*denom1;
